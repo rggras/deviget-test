@@ -17,7 +17,7 @@ protocol EntriesViewModelDelegate: class {
 class EntriesViewModel {
     
     weak var delegate: EntriesViewModelDelegate?
-    var entries: [Entry] = []
+    var entries: [EntryRepresentable] = []
     
     // MARK: Public Methods
     
@@ -27,20 +27,25 @@ class EntriesViewModel {
         // TODO: here we should call our networking layer. Instead I'm reading a local json file
         
         guard let fileUrl = Bundle.main.url(forResource: "top", withExtension: "json") else {
-            print("File could not be located at the given url")
+            print("File doesn't exist")
             return
         }
 
         do {
             let jsonData = try Data(contentsOf: fileUrl)
-                let decoder = JSONDecoder()
+            let decoder = JSONDecoder()
 
-                do {
-                    let entries = try decoder.decode(Entries.self, from: jsonData)
-                    self.entries = entries.childrens
-                } catch {
-                    delegate?.getEntriesDidFail(error: error)
+            do {
+                let decodedEntries = try decoder.decode(Entries.self, from: jsonData)
+                
+                for entry in decodedEntries.childrens {
+                    entries.append(EntryViewModel(entry: entry))
                 }
+
+                delegate?.didGetEntries()
+            } catch {
+                delegate?.getEntriesDidFail(error: error)
+            }
 
         } catch {
             delegate?.getEntriesDidFail(error: error)

@@ -15,7 +15,7 @@ struct Entry: Codable
     var author: String
     var created: Double
     var thumbnail: String
-    var numComments: Double
+    var numComments: Int
 
     enum CodingKeys: CodingKey {
         case kind, data
@@ -49,6 +49,6 @@ struct Entry: Codable
         author = try dataContainer.decode(String.self, forKey: .author)
         created = try dataContainer.decode(Double.self, forKey: .created)
         thumbnail = try dataContainer.decode(String.self, forKey: .thumbnail)
-        numComments = try dataContainer.decode(Double.self, forKey: .numComments)
+        numComments = try dataContainer.decode(Int.self, forKey: .numComments)
     }
 }

@@ -18,6 +18,9 @@
 		B472D445238D5C4A007B9686 /* top.json in Resources */ = {isa = PBXBuildFile; fileRef = B472D444238D5C4A007B9686 /* top.json */; };
 		B472D448238D5D3C007B9686 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472D447238D5D3C007B9686 /* Entries.swift */; };
 		B472D44C238DB82B007B9686 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472D44B238DB82B007B9686 /* EntryViewCell.swift */; };
+		B472D44F238DCC50007B9686 /* EntryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472D44E238DCC50007B9686 /* EntryRepresentable.swift */; };
+		B472D451238DD10E007B9686 /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472D450238DD10E007B9686 /* EntryViewModel.swift */; };
+		B472D454238DD24C007B9686 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472D453238DD24C007B9686 /* Date+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		B472D444238D5C4A007B9686 /* top.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = top.json; sourceTree = "<group>"; };
 		B472D447238D5D3C007B9686 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
 		B472D44B238DB82B007B9686 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
+		B472D44E238DCC50007B9686 /* EntryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRepresentable.swift; sourceTree = "<group>"; };
+		B472D450238DD10E007B9686 /* EntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewModel.swift; sourceTree = "<group>"; };
+		B472D453238DD24C007B9686 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 		B472D422238D57D0007B9686 /* DevigetTest */ = {
 			isa = PBXGroup;
 			children = (
+				B472D452238DD236007B9686 /* Extensions */,
+				B472D44D238DCC37007B9686 /* Representables */,
 				B472D449238DB816007B9686 /* Views */,
 				B472D443238D5BC5007B9686 /* Resources */,
 				B472D43A238D5843007B9686 /* ViewModels */,
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B472D441238D5A65007B9686 /* EntriesViewModel.swift */,
+				B472D450238DD10E007B9686 /* EntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -136,6 +145,22 @@
 				B472D44B238DB82B007B9686 /* EntryViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B472D44D238DCC37007B9686 /* Representables */ = {
+			isa = PBXGroup;
+			children = (
+				B472D44E238DCC50007B9686 /* EntryRepresentable.swift */,
+			);
+			path = Representables;
+			sourceTree = "<group>";
+		};
+		B472D452238DD236007B9686 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B472D453238DD24C007B9686 /* Date+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B472D448238D5D3C007B9686 /* Entries.swift in Sources */,
+				B472D44F238DCC50007B9686 /* EntryRepresentable.swift in Sources */,
 				B472D440238D5A51007B9686 /* Entry.swift in Sources */,
 				B472D424238D57D0007B9686 /* AppDelegate.swift in Sources */,
 				B472D426238D57D0007B9686 /* SceneDelegate.swift in Sources */,
+				B472D454238DD24C007B9686 /* Date+extensions.swift in Sources */,
 				B472D43C238D58A6007B9686 /* EntriesViewController.swift in Sources */,
+				B472D451238DD10E007B9686 /* EntryViewModel.swift in Sources */,
 				B472D44C238DB82B007B9686 /* EntryViewCell.swift in Sources */,
 				B472D442238D5A65007B9686 /* EntriesViewModel.swift in Sources */,
 			);

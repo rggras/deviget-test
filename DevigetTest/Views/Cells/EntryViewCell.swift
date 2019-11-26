@@ -12,18 +12,30 @@ class EntryViewCell: UITableViewCell {
     
     @IBOutlet var title: UILabel!
     @IBOutlet var author: UILabel!
+    @IBOutlet var timeSinceCreated: UILabel!
     @IBOutlet var thumbnail: UIImageView!
-    @IBOutlet var numComments: UILabel!
+    @IBOutlet var comments: UILabel!
 
+    var dataSource: EntryRepresentable? {
+        didSet {
+            setupUI()
+        }
+    }
+    
     // MARK: Public Methods
 
-    func setup(for entry: Entry) {
-        title.text = entry.title
-        author.text = entry.author
-        numComments.text = "\(entry.numComments) comments"
+    func setupUI() {
+        guard let dataSource = dataSource else {
+            return
+        }
+        
+        title.text = dataSource.title
+        author.text = dataSource.author
+        timeSinceCreated.text = dataSource.timeSinceCreated
+        comments.text = dataSource.comments
         
         // TODO: just doing this for test, ideally we should use an image cache
-        if let url = URL(string: entry.thumbnail) {
+        if let url = URL(string: dataSource.thumbnail) {
             if let data = try? Data(contentsOf: url) {
                 thumbnail.image = UIImage(data: data)
             }

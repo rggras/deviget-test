@@ -38,7 +38,7 @@ class EntriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EntryViewCell") as! EntryViewCell
-        cell.setup(for: viewModel.entries[indexPath.row])
+        cell.dataSource = viewModel.entries[indexPath.row]
         return cell
     }
 }
